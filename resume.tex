@@ -1,54 +1,118 @@
-\documentclass[uplatex, a4paper, 12pt]{jsarticle}
-\usepackage[top=30mm, bottom=30mm, left=25mm, right=25mm]{geometry}
-\usepackage{setspace}
+\documentclass[12pt,a4j]{jreport}
+\setcounter{secnumdepth}{5}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{here}
+\usepackage{bm}
+\usepackage{url}
+\usepackage{color}
 
-\setstretch{1.3}  % 行間をやや広くする
+\renewcommand{\baselinestretch}{1.5}
+
+\renewcommand{\bibname}{参考文献}
+\newcommand{\todo}[1]{{\bf \color{red}{TODO: #1}}}
+
+
 
 \begin{document}
 
-% --- 表紙 ---
-\thispagestyle{empty} % ページ番号を非表示
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 表紙
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
 
 \begin{center}
-\vspace*{2cm}
 
-{\LARGE 2025 年度 芝浦工業大学 工学部 情報工学科}
+    \vspace*{2cm}
+    \Large 2025年度 芝浦工業大学 工学部 情報工学科\\
 
-\vspace{1.5cm}
+    \vspace*{1.0cm}
+    \Huge 卒 \qquad 業 \qquad 論 \qquad 文\\
+    \vspace*{2.5cm}
 
-{\Huge \textbf{卒 業 論 文}}
-
-\vspace{2.5cm}
-
-{\Large 光るキーボードを用いた写経型学習による\\[0.8em]
-ソースコードタイピング能力への影響の調査}
-
-\vspace{3cm}
-
-{\Large
-学籍番号  AL22084\\[1em]
-氏    名  中橋 哉斗\\[1em]
-指導教員  笹埜 功
-}
-
-\vfill
-
-{\Large 提出日  2025年○月○日}
-
+    %TODO 編集 : 題目
+    \Large 光るキーボードを用いた写経型学習による\\ソースコードタイピング能力への影響の調査 \todo{前の人と違う題目にする}
+    
+    \vspace{4cm}
+    \begin{tabular}{ll}
+        %TODO 編集 : 題目
+        \vspace*{2mm}
+        学籍番号 & \qquad $\mathbf{AL22084}$ \\
+        \vspace*{2mm}
+        氏\phantom{　　}名 & \qquad 中橋 \quad 哉斗   \\
+        \vspace*{2mm}
+        指導教員           & \qquad 篠埜 \quad 功 \\
+        \vspace*{2mm}
+        提出日            & \qquad 2026年2月 日
+    \end{tabular}
 \end{center}
+\end{titlepage}
 
-\clearpage
 
-% --- 第1章 ---
-\section{はじめに}
 
-2022 年に高等学校情報科が改定されるまで，
-高校の情報科では「社会と情報」，「情報の科学」のいずれか 1 科目を選択する方式だった．
-8 割の生徒はプログラミング学習がカリキュラムに含まれない「社会と情報」を履修し，
-残りの 2 割の生徒はプログラミング学習を行わずに高等学校卒業を迎える．
-しかし 2022 年の改定後，
-必修科目の「情報 1」という科目が導入され，
+% \begin{abstract}
+% このファイルは，情報工学科卒業論文の推奨テンプレートである．概要書とは異なり，卒業論文本体のテンプレートはあくまで推奨であるので，このテンプレートを基にして文字サイズや行間などを修正したものを利用しても良く，またこのテンプレートを使わなくても良い．
+
+% この部分の研究概要では，研究背景，解決したい問題，研究目的，提案手法，評価方法，評価の結果について簡潔に書く．
+% 概要の有無は任意．
+% \end{abstract}
+
+
+{\makeatletter
+\let\ps@jpl@in\ps@empty
+\makeatother
+\pagestyle{empty}
+\tableofcontents
+\clearpage}
+
+\setcounter{page}{1} 
+\pagestyle{plain}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 序論 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{序論}\label{chap:intro}
+
+% \section{背景}
+
+2022年に高等学校情報\todo{文科省のweb pageで確認}が改定されるまで，
+高校の情報科では「社会と情報」，「情報の科学」のいずれか1科目を選択する方式だった．
+8割の生徒はプログラミング学習がカリキュラムに含まれない「社会と情報」を履修し，
+残りの2割の生徒はプログラミング学習を行わずに高等学校卒業を迎える．
+しかし2022年の改定後，必修科目の「情報1\todo{確認}」という科目が導入され，
 全生徒がプログラミング教育を受けることとなった．
-これに伴い大学入試共通テストにも試験科目として情報が追加され，
+これに伴い大学入試共通テストにも試験科目として「情報」が追加され，
 プログラミングを学習すること，プログラミングを初学者に教育することが重要になってきている．
+
+笠松\cite{Kasa25}は....
+\todo{次回までに、卒論5ページ、参考文献10本にする。}
+
+% \section{研究目的}
+
+% 提案手法、実装、実験、実験結果、など、論文全体がわかるように書く。
+
+% \section{本論文の構成}
+
+\chapter{関連研究}\label{chap:related}
+
+
+
+
+\chapter{提案手法}\label{chap:proposal}
+
+
+
+\chapter{実験}\label{chap:experiment}
+
+\chapter{まとめと今後の課題}\label{chap:summary}
+
+\chapter*{謝辞}
+\addcontentsline{toc}{chapter}{謝辞}
+
+\bibliographystyle{junsrt}
+\bibliography{resume.bib}
+
 \end{document}
